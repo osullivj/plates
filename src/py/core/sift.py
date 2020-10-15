@@ -22,6 +22,7 @@ CHAR_PAIRS = {
     '65':['GS'],
     '66':['GG'],
     '68':['GB'],
+    '71': ['TI'],
 }
 
 class WordSifter( object):
@@ -29,7 +30,7 @@ class WordSifter( object):
         self.words = dict( )
         # Post2001RegistrationGenerator will generate tuples like this...
         # (('A', 'A'), '01', ('A', 'A', 'A'))
-        self.gen = Post2001RegistrationGenerator( CHAR_PAIRS.keys( ))
+        self.gen = Post2001RegistrationGenerator( ['21', '71'])
         with open( wpath, 'rt') as wf:
             self.words = json.load( wf)
         self.hits = dict( )
